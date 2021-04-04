@@ -1,10 +1,12 @@
-StorPool User Guide 19
-======================
+User Guides
+===========
+
 
 .. toctree::
    :maxdepth: 2
+   :caption: Contents:
 
-   guide
+   userguides/guide-19
 
 
 
