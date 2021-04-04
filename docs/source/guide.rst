@@ -2,7 +2,7 @@
 StorPool User Guide 19
 ======================
 
-.. secnum::
+.. sectnum::
    :suffix: .
 
 Document version 2019-08-05
