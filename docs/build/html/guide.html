@@ -37,7 +37,8 @@
 
     
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="StorPool User Guide 19" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,45 +83,44 @@
               
             
             
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">StorPool User Guide 19</a><ul>
-<li><a class="reference internal" href="#storpool-overview">StorPool Overview</a></li>
-<li><a class="reference internal" href="#architecture">Architecture</a></li>
-<li><a class="reference internal" href="#feature-highlights">Feature Highlights</a><ul>
-<li><a class="reference internal" href="#scale-out-not-scale-up">Scale-out, not Scale-Up</a></li>
-<li><a class="reference internal" href="#high-performance">High Performance</a></li>
-<li><a class="reference internal" href="#high-availability-and-reliability">High Availability and Reliability</a></li>
-<li><a class="reference internal" href="#commodity-hardware">Commodity Hardware</a></li>
-<li><a class="reference internal" href="#shared-block-device">Shared Block Device</a></li>
-<li><a class="reference internal" href="#co-existence-with-hypervisor-software">Co-existence with hypervisor software</a></li>
-<li><a class="reference internal" href="#compatibility">Compatibility</a></li>
-<li><a class="reference internal" href="#cli-interface-and-api">CLI interface and API</a></li>
-<li><a class="reference internal" href="#reliable-support">Reliable Support</a></li>
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">StorPool User Guide 19</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#storpool-overview">StorPool Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-highlights">Feature Highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scale-out-not-scale-up">Scale-out, not Scale-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-performance">High Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-availability-and-reliability">High Availability and Reliability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commodity-hardware">Commodity Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shared-block-device">Shared Block Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#co-existence-with-hypervisor-software">Co-existence with hypervisor software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-interface-and-api">CLI interface and API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reliable-support">Reliable Support</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a><ul>
-<li><a class="reference internal" href="#minimum-storpool-cluster">Minimum StorPool cluster</a></li>
-<li><a class="reference internal" href="#recommended-storpool-cluster">Recommended StorPool cluster</a></li>
-<li><a class="reference internal" href="#how-storpool-relies-on-hardware">How StorPool relies on hardware</a><ul>
-<li><a class="reference internal" href="#cpu">CPU</a></li>
-<li><a class="reference internal" href="#ram">RAM</a></li>
-<li><a class="reference internal" href="#storage-hdds-ssds">Storage (HDDs / SSDs)</a></li>
-<li><a class="reference internal" href="#network">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-requirements">Hardware Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-storpool-cluster">Minimum StorPool cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-storpool-cluster">Recommended StorPool cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-storpool-relies-on-hardware">How StorPool relies on hardware</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cpu">CPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ram">RAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storage-hdds-ssds">Storage (HDDs / SSDs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network">Network</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#software-compatibility">Software Compatibility</a><ul>
-<li><a class="reference internal" href="#operating-systems">Operating Systems</a></li>
-<li><a class="reference internal" href="#file-systems">File Systems</a></li>
-<li><a class="reference internal" href="#hypervisors-cloud-management-orchestration">Hypervisors &amp; Cloud Management/Orchestration</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#software-compatibility">Software Compatibility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operating-systems">Operating Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-systems">File Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hypervisors-cloud-management-orchestration">Hypervisors &amp; Cloud Management/Orchestration</a></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-</div>
+</li>
+</ul>
+
             
           
         </div>
@@ -189,11 +189,12 @@
   <div class="section" id="storpool-user-guide-19">
 <h1>StorPool User Guide 19<a class="headerlink" href="#storpool-user-guide-19" title="Permalink to this headline">¶</a></h1>
 <p>Document version 2019-08-05</p>
+<p>Edited on 2021-04-04</p>
 <div class="section" id="storpool-overview">
 <h2>StorPool Overview<a class="headerlink" href="#storpool-overview" title="Permalink to this headline">¶</a></h2>
-<p>StorPool is distributed block storage software. It pools the attached storage (HDDs, SSDs or NVMe drives) of standard servers to create a single pool of shared storage. The StorPool software is installed on each server in the cluster. It combines the performance and capacity of all drives attached to the servers into one global namespace.</p>
+<p>StorPool is distributed block storage software. It pools the attached storage (HDDs, SSDs or NVMe drives) of standard servers to create a single pool of shared storage. The StorPool software is installed on each server in the cluster. It combines the performance and capacity of all drives attached to the servers into one global namespace. <a class="reference external" href="https://storpool.com/news/storpools-new-release-19">StorPool’s version 19 has been released in November 2019.</a> The new version has numerous improvements and makes the leading block storage SDS even better. Notable features of the new version are large scale deployments, added Windows CSV support, lower latency for NVMe storage and improved Kubernetes bare-metal support.</p>
 <p>StorPool provides standard block devices. You can create one or more volumes through its sophisticated volume manager. StorPool is compatible with ext3 and XFS file systems and with any system designed to work with a block device, e.g. databases and cluster file systems (like OCFS and GFS). StorPool can also be used with no file system, for example when using volumes to store VM images directly or as LVM physical volumes.</p>
-<p>Redundancy is provided by multiple copies (replicas) of the data written synchronously across the cluster. Users may set the number of replication copies. We recommend 3 copies as a standard and 2 copies for data that is less critical. The replication level directly correlates with the number of servers that may be down without interruption in the service. For replication 3 the number of the servers (see <a href="#id1"><span class="problematic" id="id2">`Fault sets`_</span></a>) that may be down simultaneously without losing access to the data is 2.</p>
+<p>Redundancy is provided by multiple copies (replicas) of the data written synchronously across the cluster. Users may set the number of replication copies. We recommend 3 copies as a standard and 2 copies for data that is less critical. The replication level directly correlates with the number of servers that may be down without interruption in the service. For replication 3 the number of the servers (see <a class="reference external" href="https://kb.storpool.com/user_guides/19.01/user_guide_19.01.html#fault-sets">Fault sets</a>) that may be down simultaneously without losing access to the data is 2.</p>
 <p>StorPool protects data and guarantees its integrity by a 64-bit checksum and version for each sector on a StorPool volume or snapshot. StorPool provides a very high degree of flexibility in volume management. Unlike other storage technologies, such as RAID or ZFS, StorPool does not rely on device mirroring (pairing drives for redundancy). So every disk that is added to a StorPool cluster adds capacity and improves the performance of the cluster, not just for new data but also for existing data. Provided that there are sufficient copies of the data, drives can be added or taken away with no impact to the storage service. Unlike rigid systems like RAID, StorPool does not impose any strict hierarchical storage structure dictated by the underlying disks. StorPool simply creates a single pool of storage that utilises the full capacity and performance of a set of commodity drives.</p>
 </div>
 <div class="section" id="architecture">
@@ -324,6 +325,9 @@ live software updates without interruption in the service</p>
            
           </div>
           <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="StorPool User Guide 19" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

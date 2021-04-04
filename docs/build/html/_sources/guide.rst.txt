@@ -1,17 +1,22 @@
-===========================
+======================
 StorPool User Guide 19
-===========================
+======================
+
+.. secnum::
+   :suffix: .
 
 Document version 2019-08-05
+
+Edited on 2021-04-04 
 
 StorPool Overview
 -----------------
 
-StorPool is distributed block storage software. It pools the attached storage (HDDs, SSDs or NVMe drives) of standard servers to create a single pool of shared storage. The StorPool software is installed on each server in the cluster. It combines the performance and capacity of all drives attached to the servers into one global namespace.
+StorPool is distributed block storage software. It pools the attached storage (HDDs, SSDs or NVMe drives) of standard servers to create a single pool of shared storage. The StorPool software is installed on each server in the cluster. It combines the performance and capacity of all drives attached to the servers into one global namespace. `StorPool's version 19 has been released in November 2019. <https://storpool.com/news/storpools-new-release-19>`_ The new version has numerous improvements and makes the leading block storage SDS even better. Notable features of the new version are large scale deployments, added Windows CSV support, lower latency for NVMe storage and improved Kubernetes bare-metal support.
 
 StorPool provides standard block devices. You can create one or more volumes through its sophisticated volume manager. StorPool is compatible with ext3 and XFS file systems and with any system designed to work with a block device, e.g. databases and cluster file systems (like OCFS and GFS). StorPool can also be used with no file system, for example when using volumes to store VM images directly or as LVM physical volumes.
 
-Redundancy is provided by multiple copies (replicas) of the data written synchronously across the cluster. Users may set the number of replication copies. We recommend 3 copies as a standard and 2 copies for data that is less critical. The replication level directly correlates with the number of servers that may be down without interruption in the service. For replication 3 the number of the servers (see `Fault sets`_) that may be down simultaneously without losing access to the data is 2.
+Redundancy is provided by multiple copies (replicas) of the data written synchronously across the cluster. Users may set the number of replication copies. We recommend 3 copies as a standard and 2 copies for data that is less critical. The replication level directly correlates with the number of servers that may be down without interruption in the service. For replication 3 the number of the servers (see `Fault sets <https://kb.storpool.com/user_guides/19.01/user_guide_19.01.html#fault-sets>`_) that may be down simultaneously without losing access to the data is 2.
 
 StorPool protects data and guarantees its integrity by a 64-bit checksum and version for each sector on a StorPool volume or snapshot. StorPool provides a very high degree of flexibility in volume management. Unlike other storage technologies, such as RAID or ZFS, StorPool does not rely on device mirroring (pairing drives for redundancy). So every disk that is added to a StorPool cluster adds capacity and improves the performance of the cluster, not just for new data but also for existing data. Provided that there are sufficient copies of the data, drives can be added or taken away with no impact to the storage service. Unlike rigid systems like RAID, StorPool does not impose any strict hierarchical storage structure dictated by the underlying disks. StorPool simply creates a single pool of storage that utilises the full capacity and performance of a set of commodity drives.
 
