@@ -7,7 +7,7 @@ StorPool User Guide 19
 
 Document version 2019-08-05
 
-Edited on 2021-04-04 
+*Last edit on 2021-04-04*
 
 StorPool Overview
 -----------------
