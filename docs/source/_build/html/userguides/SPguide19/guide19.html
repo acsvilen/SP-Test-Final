@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. StorPool User Guide 19 &mdash; StorPool 0.0.1 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="User Guides" href="../userguides.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> StorPool
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../userguides.html">User Guides</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#"><span class="sectnum">1.</span> StorPool User Guide 19</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#storpool-overview"><span class="sectnum">1.1.</span> StorPool Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#architecture"><span class="sectnum">1.2.</span> Architecture</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#feature-highlights"><span class="sectnum">1.3.</span> Feature Highlights</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#scale-out-not-scale-up"><span class="sectnum">1.3.1.</span> Scale-out, not Scale-Up</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#high-performance"><span class="sectnum">1.3.2.</span> High Performance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#high-availability-and-reliability"><span class="sectnum">1.3.3.</span> High Availability and Reliability</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#commodity-hardware"><span class="sectnum">1.3.4.</span> Commodity Hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#shared-block-device"><span class="sectnum">1.3.5.</span> Shared Block Device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#co-existence-with-hypervisor-software"><span class="sectnum">1.3.6.</span> Co-existence with hypervisor software</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#compatibility"><span class="sectnum">1.3.7.</span> Compatibility</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cli-interface-and-api"><span class="sectnum">1.3.8.</span> CLI interface and API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#reliable-support"><span class="sectnum">1.3.9.</span> Reliable Support</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-requirements"><span class="sectnum">1.4.</span> Hardware Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#minimum-storpool-cluster"><span class="sectnum">1.4.1.</span> Minimum StorPool cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#recommended-storpool-cluster"><span class="sectnum">1.4.2.</span> Recommended StorPool cluster</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#how-storpool-relies-on-hardware"><span class="sectnum">1.4.3.</span> How StorPool relies on hardware</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#software-compatibility"><span class="sectnum">1.4.4.</span> Software Compatibility</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><span class="sectnum">1.</span> StorPool User Guide 19</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#storpool-overview"><span class="sectnum">1.1.</span> StorPool Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture"><span class="sectnum">1.2.</span> Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feature-highlights"><span class="sectnum">1.3.</span> Feature Highlights</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#scale-out-not-scale-up"><span class="sectnum">1.3.1.</span> Scale-out, not Scale-Up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-performance"><span class="sectnum">1.3.2.</span> High Performance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#high-availability-and-reliability"><span class="sectnum">1.3.3.</span> High Availability and Reliability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#commodity-hardware"><span class="sectnum">1.3.4.</span> Commodity Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#shared-block-device"><span class="sectnum">1.3.5.</span> Shared Block Device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#co-existence-with-hypervisor-software"><span class="sectnum">1.3.6.</span> Co-existence with hypervisor software</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#compatibility"><span class="sectnum">1.3.7.</span> Compatibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cli-interface-and-api"><span class="sectnum">1.3.8.</span> CLI interface and API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reliable-support"><span class="sectnum">1.3.9.</span> Reliable Support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-requirements"><span class="sectnum">1.4.</span> Hardware Requirements</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#minimum-storpool-cluster"><span class="sectnum">1.4.1.</span> Minimum StorPool cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#recommended-storpool-cluster"><span class="sectnum">1.4.2.</span> Recommended StorPool cluster</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#how-storpool-relies-on-hardware"><span class="sectnum">1.4.3.</span> How StorPool relies on hardware</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cpu"><span class="sectnum">1.4.3.1.</span> CPU</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ram"><span class="sectnum">1.4.3.2.</span> RAM</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#storage-hdds-ssds"><span class="sectnum">1.4.3.3.</span> Storage (HDDs / SSDs)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#network"><span class="sectnum">1.4.3.4.</span> Network</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#software-compatibility"><span class="sectnum">1.4.4.</span> Software Compatibility</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#operating-systems"><span class="sectnum">1.4.4.1.</span> Operating Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file-systems"><span class="sectnum">1.4.4.2.</span> File Systems</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hypervisors-cloud-management-orchestration"><span class="sectnum">1.4.4.3.</span> Hypervisors &amp; Cloud Management/Orchestration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">StorPool</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../userguides.html">User Guides</a> &raquo;</li>
+        
+      <li><span class="sectnum">1.</span> StorPool User Guide 19</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/userguides/SPguide19/guide19.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="storpool-user-guide-19">
+<h1><span class="sectnum">1.</span> StorPool User Guide 19<a class="headerlink" href="#storpool-user-guide-19" title="Permalink to this headline">¶</a></h1>
+<p>Document version 2019-08-05</p>
+<p><em>Last edit on 2021-04-04</em></p>
+<div class="section" id="storpool-overview">
+<h2><span class="sectnum">1.1.</span> StorPool Overview<a class="headerlink" href="#storpool-overview" title="Permalink to this headline">¶</a></h2>
+<p>StorPool is distributed block storage software. It pools the attached storage (HDDs, SSDs or NVMe drives) of standard servers to create a single pool of shared storage. The StorPool software is installed on each server in the cluster. It combines the performance and capacity of all drives attached to the servers into one global namespace. <a class="reference external" href="https://storpool.com/news/storpools-new-release-19">StorPool’s version 19 has been released in November 2019.</a> The new version has numerous improvements and makes the leading block storage SDS even better. Notable features of the new version are large scale deployments, added Windows CSV support, lower latency for NVMe storage and improved Kubernetes bare-metal support.</p>
+<p>StorPool provides standard block devices. You can create one or more volumes through its sophisticated volume manager. StorPool is compatible with ext3 and XFS file systems and with any system designed to work with a block device, e.g. databases and cluster file systems (like OCFS and GFS). StorPool can also be used with no file system, for example when using volumes to store VM images directly or as LVM physical volumes.</p>
+<p>Redundancy is provided by multiple copies (replicas) of the data written synchronously across the cluster. Users may set the number of replication copies. We recommend 3 copies as a standard and 2 copies for data that is less critical. The replication level directly correlates with the number of servers that may be down without interruption in the service. For replication 3 the number of the servers (see <a class="reference external" href="https://kb.storpool.com/user_guides/19.01/user_guide_19.01.html#fault-sets">Fault sets</a>) that may be down simultaneously without losing access to the data is 2.</p>
+<p>StorPool protects data and guarantees its integrity by a 64-bit checksum and version for each sector on a StorPool volume or snapshot. StorPool provides a very high degree of flexibility in volume management. Unlike other storage technologies, such as RAID or ZFS, StorPool does not rely on device mirroring (pairing drives for redundancy). So every disk that is added to a StorPool cluster adds capacity and improves the performance of the cluster, not just for new data but also for existing data. Provided that there are sufficient copies of the data, drives can be added or taken away with no impact to the storage service. Unlike rigid systems like RAID, StorPool does not impose any strict hierarchical storage structure dictated by the underlying disks. StorPool simply creates a single pool of storage that utilises the full capacity and performance of a set of commodity drives.</p>
+</div>
+<div class="section" id="architecture">
+<h2><span class="sectnum">1.2.</span> Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<p>StorPool works on a cluster of servers in a distributed shared-nothing architecture. All functions are performed by all servers on an equal peer basis. It works on standard off-the-shelf servers running GNU/Linux.</p>
+<p>Each storage node is responsible for data stored on its local drives. Storage nodes collaborate to provide the storage service. StorPool provides a shared storage pool combining all the available storage capacity. It uses synchronous replication across servers. The StorPool client communicates in parallel with all StorPool servers. The StorPool iSCSI target provides access to volumes exported through it to other initiators.</p>
+<p>The software consists of two parts - a storage server and a storage client - that are installed on each physical server (host, node). The storage client might be the native block on Linux based systems or the iSCSI target for other systems. Each host can be a storage server, a storage client, iSCSI target, or any combination. To storage clients the StorPool volumes appear as block devices under the <code class="docutils literal notranslate"><span class="pre">/dev/storpool/</span></code> directory and behave as normal disk devices. The data on the volumes can be read and written by all clients simultaneously; its consistency is guaranteed through a synchronous replication protocol. Volumes may be used by clients as they would use a local hard drive or disk array.</p>
+</div>
+<div class="section" id="feature-highlights">
+<h2><span class="sectnum">1.3.</span> Feature Highlights<a class="headerlink" href="#feature-highlights" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="scale-out-not-scale-up">
+<h3><span class="sectnum">1.3.1.</span> Scale-out, not Scale-Up<a class="headerlink" href="#scale-out-not-scale-up" title="Permalink to this headline">¶</a></h3>
+<p>The StorPool solution is fundamentally about scaling out (by adding more drives or nodes) rather than scaling up (adding capacity by replacing a storage box with larger storage box). This means StorPool can scale independently by IOPS, storage space and bandwidth. There is no bottleneck or single point of failure. StorPool can grow without interruption and in small steps - a drive, a server and/or a network interface at a time.</p>
+</div>
+<div class="section" id="high-performance">
+<h3><span class="sectnum">1.3.2.</span> High Performance<a class="headerlink" href="#high-performance" title="Permalink to this headline">¶</a></h3>
+<p>StorPool combines the IOPS performance of all drives in the cluster and optimizes drive access patterns to provide low latency and handling of storage traffic bursts. The load is distributed equally between all servers through striping and sharding.</p>
+</div>
+<div class="section" id="high-availability-and-reliability">
+<h3><span class="sectnum">1.3.3.</span> High Availability and Reliability<a class="headerlink" href="#high-availability-and-reliability" title="Permalink to this headline">¶</a></h3>
+<p>StorPool uses a replication mechanism that slices and stores copies of the data on different servers. For primary, high performance storage this solution has many advantages compared to RAID systems and provides considerably higher levels of reliability and availability. In case of a drive, server, or other component failure, StorPool uses some of the available copies of the data located on other nodes in the same or other racks significantly decreasing the risk of losing access to or losing data.</p>
+</div>
+<div class="section" id="commodity-hardware">
+<h3><span class="sectnum">1.3.4.</span> Commodity Hardware<a class="headerlink" href="#commodity-hardware" title="Permalink to this headline">¶</a></h3>
+<p>StorPool supports drives and servers in a vendor-agnostic manner, allowing you to avoid vendor lock-in. This allows the use of commodity hardware, while preserving reliability and performance requirements. Moreover, unlike RAID, StorPool is drive agnostic - you can mix drives of various types, make, speed or size in a StorPool cluster.</p>
+</div>
+<div class="section" id="shared-block-device">
+<h3><span class="sectnum">1.3.5.</span> Shared Block Device<a class="headerlink" href="#shared-block-device" title="Permalink to this headline">¶</a></h3>
+<p>StorPool provides shared block devices with semantics identical to a shared iSCSI or FC disk array.</p>
+</div>
+<div class="section" id="co-existence-with-hypervisor-software">
+<h3><span class="sectnum">1.3.6.</span> Co-existence with hypervisor software<a class="headerlink" href="#co-existence-with-hypervisor-software" title="Permalink to this headline">¶</a></h3>
+<p>StorPool can utilize repurposed existing servers and can co-exist with hypervisor software on the same server. This means that there is no dedicated hardware for storage, and growing an IaaS cloud solution is achieved by simply adding more servers to the cluster.</p>
+</div>
+<div class="section" id="compatibility">
+<h3><span class="sectnum">1.3.7.</span> Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h3>
+<p>StorPool is compatible with 64-bit Intel and AMD based servers. We support all Linux-based hypervisors and hypervisor management software. Any Linux software designed to work with a shared storage solution such as an iSCSI or FC disk array will work with StorPool. StorPool guarantees the functionality and availability of the storage solution at the Linux block device interface.</p>
+</div>
+<div class="section" id="cli-interface-and-api">
+<h3><span class="sectnum">1.3.8.</span> CLI interface and API<a class="headerlink" href="#cli-interface-and-api" title="Permalink to this headline">¶</a></h3>
+<p>StorPool provides an easy to use yet powerful command-line interface (CLI) tool for administration of the data storage solution. It is simple and user-friendly - making configuration changes, provisioning and monitoring fast and efficient.
+StorPool also provides a RESTful JSON API, and python bindings exposing all the available functionality, so you can integrate it with any existing management system.</p>
+</div>
+<div class="section" id="reliable-support">
+<h3><span class="sectnum">1.3.9.</span> Reliable Support<a class="headerlink" href="#reliable-support" title="Permalink to this headline">¶</a></h3>
+<p>StorPool comes with reliable dedicated support:
+remote installation and initial configuration by StorPool’s specialists;
+24x7 support;
+live software updates without interruption in the service</p>
+</div>
+</div>
+<div class="section" id="hardware-requirements">
+<h2><span class="sectnum">1.4.</span> Hardware Requirements<a class="headerlink" href="#hardware-requirements" title="Permalink to this headline">¶</a></h2>
+<p>All distributed storage systems are highly dependent on the underlying hardware. There are some aspects that will help achieve maximum performance with StorPool and are best considered in advance. Each node in the cluster can be used as server, client, iSCSI target or any combination; depending on the role, hardware requirements vary.</p>
+<div class="section" id="minimum-storpool-cluster">
+<h3><span class="sectnum">1.4.1.</span> Minimum StorPool cluster<a class="headerlink" href="#minimum-storpool-cluster" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>3 industry-standard x86 servers;</p></li>
+<li><p>any x86-64 CPU with 4 threads or more;</p></li>
+<li><p>32 GB ECC RAM per node (8+ GB used by StorPool);</p></li>
+<li><p>any hard drive controller in JBOD mode;</p></li>
+<li><p>3x SATA3 hard drives or SSDs;</p></li>
+<li><p>dedicated 10GE LAN;</p></li>
+</ul>
+</div>
+<div class="section" id="recommended-storpool-cluster">
+<h3><span class="sectnum">1.4.2.</span> Recommended StorPool cluster<a class="headerlink" href="#recommended-storpool-cluster" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>5 industry-standard x86 servers;</p></li>
+<li><p>IPMI, iLO/LOM/iDRAC desirable;</p></li>
+<li><p>Intel Nehalem generation (or newer) Xeon processor(s);</p></li>
+<li><p>64GB ECC RAM or more in every node;</p></li>
+<li><p>any hard drive controller in JBOD mode;</p></li>
+<li><p>dedicated dual 25GE or faster LAN;</p></li>
+<li><p>2+ NVMe drives per storage node;</p></li>
+</ul>
+</div>
+<div class="section" id="how-storpool-relies-on-hardware">
+<h3><span class="sectnum">1.4.3.</span> How StorPool relies on hardware<a class="headerlink" href="#how-storpool-relies-on-hardware" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="cpu">
+<h4><span class="sectnum">1.4.3.1.</span> CPU<a class="headerlink" href="#cpu" title="Permalink to this headline">¶</a></h4>
+<p>When the system load is increased, CPUs are saturated with system interrupts. To avoid the negative effects of this, StorPool’s server and client processes are given one or more dedicated CPU cores. This significantly improves overall the performance and the performance consistency.</p>
+</div>
+<div class="section" id="ram">
+<h4><span class="sectnum">1.4.3.2.</span> RAM<a class="headerlink" href="#ram" title="Permalink to this headline">¶</a></h4>
+<p>ECC memory can detect and correct the most common kinds of in-memory data corruption thus maintains a memory system immune to single-bit errors. Using ECC memory is an essential requirement for improving the reliability of the node. In fact, StorPool is not designed to work with non-ECC memory.</p>
+</div>
+<div class="section" id="storage-hdds-ssds">
+<h4><span class="sectnum">1.4.3.3.</span> Storage (HDDs / SSDs)<a class="headerlink" href="#storage-hdds-ssds" title="Permalink to this headline">¶</a></h4>
+<p>StorPool ensures the best drive utilization. Replication and data integrity are core functionality, so RAID controllers are not required and all storage devices might be connected as JBOD. All hard drives are journaled either on an NVMe drive similar to Intel Optane series. When write-back cache is available on a RAID controller it could be used in a StorPool specific way in order to provide power-loss protection for the data written on the hard disks. This is not necessary for SATA SSD pools.</p>
+</div>
+<div class="section" id="network">
+<h4><span class="sectnum">1.4.3.4.</span> Network<a class="headerlink" href="#network" title="Permalink to this headline">¶</a></h4>
+<p>StorPool is a distributed system which means that the network is an essential part of it. Designed for efficiency, StorPool combines data transfer from other nodes in the cluster. This greatly improves the data throughput, compared with access to local devices, even if they are SSD or NVMe.</p>
+</div>
+</div>
+<div class="section" id="software-compatibility">
+<h3><span class="sectnum">1.4.4.</span> Software Compatibility<a class="headerlink" href="#software-compatibility" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="operating-systems">
+<h4><span class="sectnum">1.4.4.1.</span> Operating Systems<a class="headerlink" href="#operating-systems" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>Linux (various distributions)</p></li>
+<li><p>Windows and VMWare, Citrix Xen through standard protocols (iSCSI)</p></li>
+</ul>
+</div>
+<div class="section" id="file-systems">
+<h4><span class="sectnum">1.4.4.2.</span> File Systems<a class="headerlink" href="#file-systems" title="Permalink to this headline">¶</a></h4>
+<p>Developed and optimized for Linux, StorPool is very well tested on CentOS, Ubuntu and Debian. Compatible and well tested with ext4 and XFS file systems and with any system designed to work with a block device, e.g. databases and cluster file systems (like GFS2 or OCFS2). StorPool can also be used with no file system, for example when using volumes to store VM images directly. StorPool is compatible with other technologies from the Linux storage stack, such as LVM, dm-cache/bcache, and LIO.</p>
+</div>
+<div class="section" id="hypervisors-cloud-management-orchestration">
+<h4><span class="sectnum">1.4.4.3.</span> Hypervisors &amp; Cloud Management/Orchestration<a class="headerlink" href="#hypervisors-cloud-management-orchestration" title="Permalink to this headline">¶</a></h4>
+<ul class="simple">
+<li><p>KVM</p></li>
+<li><p>LXC/Containers</p></li>
+<li><p>OpenStack</p></li>
+<li><p>OpenNebula</p></li>
+<li><p>OnApp</p></li>
+<li><p>CloudStack</p></li>
+<li><p>any other technology compatible with the Linux storage stack.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../userguides.html" class="btn btn-neutral float-left" title="User Guides" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, StorPool Storage.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

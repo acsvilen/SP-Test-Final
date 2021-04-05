@@ -1,19 +1,10 @@
 User Guides
 ===========
 
+Contents:
+---------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :maxdepth: 1
 
-   userguides/guide-19
-
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   guides/guide19
